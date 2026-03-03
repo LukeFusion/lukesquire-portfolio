@@ -380,3 +380,130 @@ a{ color: inherit; text-decoration: none; }
   .split{ grid-template-columns: 1fr; }
   .nav{ gap: var(--s2); }
 }
+
+/* ============ Responsive layout ============ */
+
+/* Make images never overflow */
+img, iframe {
+  max-width: 100%;
+}
+
+/* Prevent horizontal scroll from long lines */
+body {
+  overflow-x: hidden;
+}
+
+/* Containers: ensure safe padding on small screens */
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Header: allow wrapping + better spacing on mobile */
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Nav: wrap links if needed */
+.nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Buttons: keep readable tap targets */
+.btn, .btn--primary, .btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+}
+
+/* Section spacing */
+.section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+/* Typography scaling */
+.h1 { font-size: 44px; line-height: 1.1; }
+.h2 { font-size: 32px; line-height: 1.2; }
+.body, p, li { font-size: 16px; line-height: 1.6; }
+
+/* If you used a hero without .h1/.h2 classes */
+.hero h1 {
+  font-size: 44px;
+  line-height: 1.1;
+}
+
+/* Blueprint image: make it breathe on mobile */
+.blueprint-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Strength grid: default desktop behavior (keep if you already have) */
+.strength-grid {
+  display: flex;
+  gap: 32px;
+}
+
+/* ============ Breakpoints ============ */
+@media (max-width: 900px) {
+  .strength-grid {
+    flex-direction: column;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  /* Smaller top/bottom padding */
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  /* Headings */
+  .h1, .hero h1 { font-size: 32px; }
+  .h2 { font-size: 26px; }
+
+  /* Header: stack logo + nav */
+  .header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  /* Make nav links easier to tap */
+  .nav__link {
+    padding: 8px 10px;
+  }
+
+  /* Make CTAs stack */
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  /* If you have hero-metrics strip */
+  .hero-metrics {
+    gap: 16px;
+  }
+
+  /* Panels/iframes on resume page */
+  iframe {
+    height: 70vh;
+  }
+}
