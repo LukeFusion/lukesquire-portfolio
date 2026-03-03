@@ -1,5 +1,144 @@
 <!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>lukesquire.us</title></head>
-  <body><h1>It works.</h1></body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Luke Squire | Product Leader</title>
+  <meta name="description" content="Luke Squire — Product leader building structured systems that move complex markets forward." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">Luke Squire</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="projects.html">Projects</a>
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link" href="resume.html">Resume</a>
+        <a class="nav__link nav__link--cta" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <p class="kicker">Product Leadership · Climate/Energy · AI Systems</p>
+
+        <h1 class="h1">
+          Building structured systems that move complex markets forward.
+        </h1>
+
+        <p class="subhead">
+          I’m a product leader focused on platform strategy, execution, and measurable outcomes —
+          especially in regulated, high-stakes environments.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn--primary" href="projects.html">View projects</a>
+          <a class="btn btn--secondary" href="contact.html">Contact</a>
+        </div>
+
+        <div class="cred">
+          <div class="cred__item">
+            <div class="cred__label">Focus</div>
+            <div class="cred__value">Platforms · Workflows · GTM systems</div>
+          </div>
+          <div class="cred__item">
+            <div class="cred__label">Domains</div>
+            <div class="cred__value">Energy · Climate Tech · AI research</div>
+          </div>
+          <div class="cred__item">
+            <div class="cred__label">Mode</div>
+            <div class="cred__value">Full-time roles · Contract / consulting</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="h2">Featured work</h2>
+          <p class="section__sub">Three examples that show how I think and what I build.</p>
+        </div>
+
+        <div class="grid">
+          <a class="card" href="projects.html#job-intel">
+            <div class="card__title">AI Job Intelligence Engine</div>
+            <div class="card__desc">
+              Automated sourcing, triage, application generation, and outreach workflows using LLM systems.
+            </div>
+            <div class="card__meta">Systems design · Automation · Practical AI</div>
+          </a>
+
+          <a class="card" href="projects.html#channel-platform">
+            <div class="card__title">Solar Channel Platform Automation</div>
+            <div class="card__desc">
+              Improved partner experience and reduced operational overhead by automating key workflows and reporting.
+            </div>
+            <div class="card__meta">B2B SaaS · Ops leverage · Stakeholders</div>
+          </a>
+
+          <a class="card" href="projects.html#gridflow">
+            <div class="card__title">GridFlow (Concept)</div>
+            <div class="card__desc">
+              Workflow + economics model to reduce post-contract delays and unlock value across delivery milestones.
+            </div>
+            <div class="card__meta">Strategy · Market systems · Modeling</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container split">
+        <div>
+          <h2 class="h2">About</h2>
+          <p class="body">
+            I’m mission-driven by work that creates real-world progress. I’m most effective where constraints are real:
+            regulation, multi-stakeholder systems, and messy operational realities.
+          </p>
+          <p class="body body--muted">
+            I bring structure to ambiguity, build leverage into platforms, and align teams around outcomes.
+          </p>
+          <a class="textlink" href="about.html">Read more →</a>
+        </div>
+
+        <div class="panel">
+          <div class="panel__row">
+            <div class="panel__label">Open to</div>
+            <div class="panel__value">PM leadership roles + scoped consulting</div>
+          </div>
+          <div class="panel__row">
+            <div class="panel__label">Based in</div>
+            <div class="panel__value">San Diego, CA</div>
+          </div>
+          <div class="panel__row">
+            <div class="panel__label">Contact</div>
+            <div class="panel__value"><a class="textlink" href="contact.html">lukesquire.us/contact</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">© <span id="y"></span> Luke Squire</div>
+      <div class="footer__right">
+        <a class="textlink" href="resume.html">Resume</a>
+        <span class="dot">•</span>
+        <a class="textlink" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
