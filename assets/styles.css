@@ -541,3 +541,28 @@ body {
   }
 
 }
+
+.resume-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resume-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.resume-form input,
+.resume-form textarea {
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.resume-form button {
+  margin-top: 10px;
+}
