@@ -72,6 +72,75 @@ a{ color: inherit; text-decoration: none; }
 .nav__link--cta{
   color: var(--teal);
 }
+.hero {
+  text-align: center;
+  padding: 100px 20px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.cta-group {
+  margin-top: 30px;
+}
+
+.btn-primary {
+  background-color: #0F766E;
+  color: white;
+  padding: 12px 24px;
+  margin-right: 15px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.btn-secondary {
+  border: 1px solid #0F766E;
+  color: #0F766E;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.blueprint-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.blueprint-image {
+  max-width: 100%;
+  margin-top: 40px;
+}
+
+.strengths {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.strength-grid {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.strength-card {
+  flex: 1;
+}
+
+.final-cta {
+  text-align: center;
+  padding: 100px 20px;
+}
 
 .hero{
   position: relative;
