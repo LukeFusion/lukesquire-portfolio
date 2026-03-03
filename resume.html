@@ -21,18 +21,69 @@
 
   <main class="section">
     <div class="container">
+
       <div class="section__header">
-        <h1 class="h2">Resume</h1>
-        <p class="section__sub">Download the PDF or view it below.</p>
+        <h1 class="h2">Request Resume</h1>
+        <p class="section__sub">
+          I tailor my resume to specific roles and teams to ensure relevance and clarity.
+        </p>
       </div>
 
-      <p class="body">
-        <a class="btn btn--primary" href="assets/resume.pdf" download>Download PDF</a>
-      </p>
+      <div class="body">
+        <p>
+          My experience spans platform strategy, regulated systems, growth-stage SaaS,
+          and AI-enabled workflows across climate and energy markets.
+        </p>
 
-      <div class="panel" style="padding:0; overflow:hidden;">
-        <iframe title="Resume PDF" src="assets/resume.pdf" style="width:100%; height:900px; border:0;"></iframe>
+        <p>
+          To receive a tailored resume version, please share a few details below.
+        </p>
+
+        <ul>
+          <li>Senior Product Leadership Experience (10+ years)</li>
+          <li>Platform & API Systems</li>
+          <li>Growth & Revenue Impact</li>
+          <li>Regulated & AI Environments</li>
+        </ul>
       </div>
+
+      <div class="panel" style="margin-top:40px;">
+        <form action="https://formspree.io/f/yourformid" method="POST" class="resume-form">
+          
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Company
+            <input type="text" name="company">
+          </label>
+
+          <label>
+            Role / Context
+            <textarea name="message" rows="4" placeholder="What role or team is this for?"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn--primary">Request Resume</button>
+
+        </form>
+      </div>
+
+      <div style="margin-top:40px;">
+        <p>
+          Prefer LinkedIn?  
+          <a href="https://linkedin.com/in/lukesquire/" target="_blank">
+            View my profile here.
+          </a>
+        </p>
+      </div>
+
     </div>
   </main>
 </body>
