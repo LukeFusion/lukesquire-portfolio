@@ -21,21 +21,56 @@
 
   <main class="section">
     <div class="container">
+
       <div class="section__header">
         <h1 class="h2">Contact</h1>
-        <p class="section__sub">Hiring conversations or scoped consulting — either way, happy to connect.</p>
+        <p class="section__sub">
+          For product leadership roles, advisory work, or strategic conversations.
+        </p>
       </div>
 
       <div class="panel">
-        <div class="panel__row">
-          <div class="panel__label">Email</div>
-          <div class="panel__value"><a class="textlink" href="mailto:YOUR_EMAIL_HERE">LSQUIRE22@GMAIL.COM</a></div>
-        </div>
-        <div class="panel__row">
-          <div class="panel__label">LinkedIn</div>
-          <div class="panel__value"><a class="textlink" href="https://www.linkedin.com/in/lukesquire/" target="_blank" rel="noreferrer">linkedin.com/in/lukesquire</a></div>
-        </div>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+
+          <label>
+            Company
+            <input type="text" name="company">
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <!-- Honeypot field for bots -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit" class="btn btn--primary">Send Message</button>
+
+        </form>
+
       </div>
+
+      <div style="margin-top:40px;">
+        <p>
+          You can also connect with me on 
+          <a href="https://linkedin.com/in/lukesquire/" target="_blank">
+            LinkedIn
+          </a>.
+        </p>
+      </div>
+
     </div>
   </main>
 </body>
