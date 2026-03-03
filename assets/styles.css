@@ -98,6 +98,32 @@ a{ color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
+/* Hero metrics strip */
+.hero-metrics {
+  display: flex;
+  gap: var(--s4);
+  margin: var(--s4) 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric__value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--teal);
+  display: block;
+}
+
+.metric__label {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
 .kicker{
   color: var(--muted);
   font-weight: 600;
