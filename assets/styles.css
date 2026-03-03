@@ -507,3 +507,37 @@ body {
     height: 70vh;
   }
 }
+
+/* ===== Mobile container fix ===== */
+@media (max-width: 640px) {
+
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+}
+@media (max-width: 900px) {
+
+  .strength-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+}
+@media (max-width: 640px) {
+
+  .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .cta-group a {
+    width: 100%;
+    text-align: center;
+  }
+
+}
