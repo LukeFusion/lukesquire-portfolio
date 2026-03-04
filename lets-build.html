@@ -55,7 +55,7 @@
         </p>
       </div>
 
-      <div class="panel" style="margin-top:50px;">
+      <div class="panel panel--spaced">
         <form action="https://formspree.io/f/mlgwqjen" method="POST" class="contact-form">
 
           <label>
@@ -79,14 +79,14 @@
           </label>
 
           <!-- Honeypot for spam protection -->
-          <input type="text" name="_gotcha" style="display:none">
+          <input type="text" name="_gotcha" class="field--hidden">
 
           <button type="submit" class="btn btn--primary">Start the Conversation</button>
 
         </form>
       </div>
 
-      <div style="margin-top:40px;">
+      <div class="contact-followup">
         <p>
           Prefer LinkedIn?
           <a href="https://linkedin.com/in/lukesquire/" target="_blank">
@@ -97,5 +97,20 @@
 
     </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">© <span id="y"></span> Luke Squire</div>
+      <div class="footer__right">
+        <a class="textlink" href="lets-build.html">Let's Build!</a>
+        <span class="dot">•</span>
+        <a class="textlink" href="lets-build.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

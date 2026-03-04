@@ -17,35 +17,34 @@
       </nav>
     </div>
   </header>
-<!-- test commit -->
   <main class="section">
     <div class="container">
       <section class="about-intro">
-   <div class="about-intro-flex">
+        <div class="about-intro-flex">
 
-    <div class="about-photo">
-      <img src="assets/Pictureofme.jpeg" alt="Luke Squire">
-    </div>
+          <div class="about-photo">
+            <img src="assets/Pictureofme.jpeg" alt="Luke Squire">
+          </div>
 
-    <div class="about-intro-content">
+          <div class="about-intro-content">
 
-      <h1 class="about-hello">Hello, I’m Luke.</h1>
+            <h1 class="about-hello">Hello, I’m Luke.</h1>
       
-          <p class="body">
-            I’m a product leader based in San Diego, California who builds systems that turn
-            complexity into measurable outcomes. 
-          </p>
+            <p class="body">
+              I’m a product leader based in San Diego, California who builds systems that turn
+              complexity into measurable outcomes.
+            </p>
       
-          <p class="body">
-            Over the past decade I’ve led platform, growth, and AI-driven product
-            initiatives across climate, energy, and regulated markets from first
-            product hire through acquisition and scale.
-      </p>
+            <p class="body">
+              Over the past decade I’ve led platform, growth, and AI-driven product
+              initiatives across climate, energy, and regulated markets from first
+              product hire through acquisition and scale.
+            </p>
 
-    </div>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
       <div class="section__header">
         <h1 class="h2">How I Build</h1>
           <p class="section__sub">
@@ -125,9 +124,9 @@
 
       </div>
 
-      <div class="panel" style="margin-top:60px;">
-        <h3 style="margin-bottom:10px;">Let’s Talk Product Systems</h3>
-        <p style="margin-bottom:20px;">
+      <div class="panel panel--spaced">
+        <h3 class="panel__heading">Let’s Talk Product Systems</h3>
+        <p class="panel__lead">
           If you’re looking for structured, outcome-oriented product leadership, let’s connect.
         </p>
         <a class="btn btn--primary" href="lets-build.html">Get in touch</a>
@@ -136,5 +135,20 @@
 
     </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">© <span id="y"></span> Luke Squire</div>
+      <div class="footer__right">
+        <a class="textlink" href="lets-build.html">Let's Build!</a>
+        <span class="dot">•</span>
+        <a class="textlink" href="lets-build.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
