@@ -338,14 +338,14 @@ a{ color: inherit; text-decoration: none; }
 .about-intro-flex {
   display: flex;
   align-items: flex-start;
-  gap: 28px;
+  gap: 20px;
 }
 
 /* Photo */
 
 .about-photo img {
-  width: 110px;
-  height: 110px;
+  width: 84px;
+  height: 84px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -369,11 +369,12 @@ a{ color: inherit; text-decoration: none; }
 
   .about-intro-flex {
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .about-photo img {
-    width: 90px;
-    height: 90px;
+    width: 72px;
+    height: 72px;
   }
 
   .about-hello {
