@@ -204,8 +204,8 @@ iframe {
 }
 
 .btn,
-.btn-primary,
-.btn-secondary {
+.btn--primary,
+.btn--secondary {
   display: inline-flex;
   width: 100%;
   align-items: center;
@@ -217,19 +217,16 @@ iframe {
   font-weight: 650;
 }
 
-.btn-primary,
 .btn--primary {
   background: var(--teal);
   color: #fff;
   border-color: transparent;
 }
 
-.btn-primary:hover,
 .btn--primary:hover {
   background: var(--teal-dark);
 }
 
-.btn-secondary,
 .btn--secondary {
   border: 1px solid var(--teal);
   color: var(--teal);
@@ -364,6 +361,43 @@ iframe {
   color: rgba(15, 23, 42, 0.85);
 }
 
+.currently-building {
+  padding: 56px 0;
+}
+
+.product-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+
+.product-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: border-color 120ms ease;
+}
+
+.product-card:hover {
+  border-color: rgba(15, 118, 110, 0.35);
+}
+
+.product-card h3 {
+  margin: 0 0 var(--s1);
+  font-weight: 650;
+}
+
+.product-card p {
+  margin: 0 0 var(--s2);
+  color: rgba(15, 23, 42, 0.85);
+}
+
+.product-card .btn {
+  margin-top: 8px;
+}
+
 .final-cta {
   padding: 56px 0;
   border-top: 1px solid var(--border);
@@ -472,6 +506,7 @@ iframe {
   .section,
   .blueprint-section,
   .strengths,
+  .currently-building,
   .final-cta {
     padding-top: 72px;
     padding-bottom: 72px;
@@ -545,6 +580,12 @@ iframe {
 @media (min-width: 901px) {
   .strength-grid {
     flex-direction: row;
+    gap: 32px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
 }
