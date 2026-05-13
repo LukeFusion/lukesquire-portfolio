@@ -373,6 +373,8 @@ iframe {
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -395,7 +397,14 @@ iframe {
 }
 
 .product-card .btn {
-  margin-top: 8px;
+  margin-top: auto;
+}
+
+/* Product grid on projects page */
+.section .product-grid {
+  margin-bottom: var(--s5);
+  padding-bottom: var(--s4);
+  border-bottom: 1px solid var(--border);
 }
 
 .final-cta {
