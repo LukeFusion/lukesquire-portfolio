@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Stylized audit/checkmark concept -->
+  <rect x="8" y="12" width="48" height="40" rx="4" ry="4"/>
+  <path d="M20 28l6 6 16-16"/>
+  <line x1="20" y1="38" x2="44" y2="38"/>
+  <line x1="20" y1="46" x2="36" y2="46"/>
+</svg>

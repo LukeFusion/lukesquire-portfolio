@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Central orchestrator hub at the middle (32, 32) -->
+  <circle cx="32" cy="32" r="5"/>
+
+  <!-- Five director nodes in a clean radial pattern around the hub -->
+  <!-- Top -->
+  <circle cx="32" cy="12" r="4"/>
+  <line x1="32" y1="17" x2="32" y2="27"/>
+
+  <!-- Top-right -->
+  <circle cx="48" cy="18" r="4"/>
+  <line x1="44" y1="22" x2="37" y2="28"/>
+
+  <!-- Bottom-right -->
+  <circle cx="48" cy="46" r="4"/>
+  <line x1="44" y1="42" x2="37" y2="36"/>
+
+  <!-- Bottom-left -->
+  <circle cx="16" cy="46" r="4"/>
+  <line x1="20" y1="42" x2="27" y2="36"/>
+
+  <!-- Top-left -->
+  <circle cx="16" cy="18" r="4"/>
+  <line x1="20" y1="22" x2="27" y2="28"/>
+
+  <!-- Advisor node positioned outside, top-right, connected with dashed line -->
+  <circle cx="54" cy="10" r="4"/>
+  <line x1="50" y1="14" x2="38" y2="28" stroke-dasharray="3 3"/>
+</svg>

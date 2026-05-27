@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Autonomous Agent Development | Luke Squire</title>
+  <meta name="description" content="Personal AI executive team built inside Claude Code: six named agents, role-based ownership, and an orchestrator. A worked example of autonomous system architecture." />
+  <link rel="stylesheet" href="../../assets/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js"></script>
+  <style>
+    .page-header {
+      margin-bottom: var(--s4);
+    }
+
+    .page-context {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      margin-bottom: var(--s2);
+    }
+
+    .page-header h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 0 0 var(--s2);
+      letter-spacing: -0.015em;
+    }
+
+    .page-subheader {
+      font-size: 18px;
+      line-height: 1.5;
+      color: rgba(15, 23, 42, 0.8);
+      max-width: 70ch;
+      margin: 0;
+    }
+
+    .section-content {
+      margin-bottom: var(--s5);
+    }
+
+    .section-heading {
+      font-size: 20px;
+      font-weight: 650;
+      margin: var(--s4) 0 var(--s2);
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(15, 23, 42, 0.85);
+      margin-bottom: var(--s3);
+      max-width: 80ch;
+    }
+
+    .org-chart-container {
+      text-align: center;
+      margin: var(--s3) 0 var(--s4);
+    }
+
+    .org-chart-container img {
+      max-width: 100%;
+      height: auto;
+      max-width: 800px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .design-tiles {
+      display: grid;
+      gap: var(--s3);
+      margin-top: var(--s3);
+    }
+
+    .design-tile {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--s3);
+      transition: border-color 120ms ease;
+    }
+
+    .design-tile:hover {
+      border-color: rgba(15, 118, 110, 0.35);
+    }
+
+    .design-tile h3 {
+      font-size: 16px;
+      font-weight: 650;
+      margin: 0 0 var(--s1);
+      color: var(--text);
+    }
+
+    .design-tile p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(15, 23, 42, 0.85);
+      margin: 0;
+    }
+
+    .mermaid-container {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--s3);
+      margin: var(--s3) 0;
+      overflow-x: auto;
+    }
+
+    .mermaid {
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .mobile-note {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: var(--s2);
+    }
+
+    .close-section {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(15, 23, 42, 0.85);
+      max-width: 80ch;
+    }
+
+    @media (min-width: 961px) {
+      .page-header h1 {
+        font-size: 40px;
+      }
+
+      .design-tiles {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="../../index.html">Luke Squire</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="../../projects.html">Projects</a>
+        <a class="nav__link" href="../../about.html">About</a>
+        <a class="nav__link nav__link--cta" href="../../lets-build.html">Let's Build</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+
+      <div class="page-header">
+        <p class="page-context">A worked example of autonomous system architecture.</p>
+        <h1>Autonomous Agent Development</h1>
+        <p class="page-subheader">I built a personal AI executive team inside Claude Code with six named agents, role-based ownership, and an orchestrator. Here's how the system works and what I've learned designing it.</p>
+      </div>
+
+      <div class="section-content">
+        <h2 class="section-heading">The Team</h2>
+        <div class="org-chart-container">
+          <img src="../../assets/lukes-west-wing.png" alt="Luke's West Wing: an AI executive team org chart showing Luke at top, Charlie as strategic advisor, Leo as orchestrator, and four directors (Sam, CJ, Donna, Josh)" />
+        </div>
+        <p class="section-intro">I named them after The West Wing. agent-Leo McGarry runs the orchestrator. agent-Sam Seaborn owns product and engineering. agent-CJ Craig handles marketing and growth. agent-Donna Moss runs career and job search. agent-Josh Lyman manages operations, calendar, and costs.</p>
+        <p class="section-intro">Then I added agent-Charlie Young, different from the others. The first five directors are executors: they own a lane and execute work in it. agent-Charlie is a thinking partner and strategist. He pattern-matches across the team, surfaces second-order effects, flags when something feels off, and owns the memory layer. Leo doesn't task Charlie with work. Leo brings Charlie in when the decision is hard or when you want a sharper second opinion before committing.</p>
+        <p class="section-intro">The org chart shows the structure. Beneath each director is the lane they own and the types of work they handle.</p>
+      </div>
+
+      <div class="section-content">
+        <h2 class="section-heading">How I Designed It</h2>
+
+        <div class="design-tiles">
+          <div class="design-tile">
+            <h3>Tight role ownership.</h3>
+            <p>Each director owns one lane with no overlap. Vague roles produce vague output. Tight ownership produces work you can actually use. When agent-Donna handles a job application, she owns it end-to-end. When agent-CJ publishes marketing content, she owns positioning and distribution. agent-Sam owns the technical spec. If the work belongs to no one or to two people, you fragment your effort and spend cycles on handoff debates instead of making the work better.</p>
+          </div>
+
+          <div class="design-tile">
+            <h3>An orchestrator, not a router.</h3>
+            <p>agent-Leo doesn't just send tasks downhill. He coordinates handoffs between directors, decides when to bring in agent-Charlie for strategic input, and runs a protocol for when two lanes touch the same work. This was the biggest design win. Without the orchestrator, the agents would thrash around the edges trying to figure out who owns what. With it, I spend far less time babysitting the system and far more time using its output.</p>
+          </div>
+
+          <div class="design-tile">
+            <h3>A thinking partner alongside the executors.</h3>
+            <p>Most agentic systems are all execution. My agent team converged on adding one director whose only job is to think about how the whole team thinks. agent-Charlie reviews decisions before they lock, tracks what works and what doesn't, and surfaces patterns the individual directors might miss. It sounds like overhead. It turned out to be load-bearing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-content">
+        <h2 class="section-heading">How It Works in Practice</h2>
+        <p class="section-intro">agent-Donna's job application system is one example of this architecture in action. One entry skill orchestrates the full lifecycle: job description intake, resume and cover letter generation, iteration, a structured audit, certification, interview prep, and mock interview. Seven specialist sidekicks handle each phase. The workflow diagram below shows the full journey and how each phase connects to the next.</p>
+
+        <div class="mermaid-container">
+          <div class="mermaid">
+            flowchart TB
+                classDef skill fill:#e8f0f7,stroke:#2c5f8a,stroke-width:2px,color:#1a1a1a
+                classDef sidekick fill:#fff4e8,stroke:#b85c00,stroke-width:2px,color:#1a1a1a
+                classDef file fill:#eaf5ea,stroke:#4a7c4a,stroke-width:1px,color:#1a1a1a
+                classDef shared fill:#efeaf5,stroke:#6a5a8a,stroke-width:1px,color:#1a1a1a
+                classDef user fill:#fff,stroke:#1a1a1a,stroke-width:2px,color:#1a1a1a
+
+                User([User pastes JD + Company + Title]):::user
+
+                User --> JobApp["/job-app"]:::skill
+                User -. score only .-> JobFit["/job-fit"]:::skill
+
+                JobApp --> Setup[["Create folder<br/>JobApps/Company_Mon_YY/<br/>Write jd.md"]]
+
+                Setup --> P1[application-prep<br/>APP.RUN]:::sidekick
+                P1 --> F1[/"resume_v1.md<br/>cover_letter_v1.md<br/>audit_v1.md"/]:::file
+
+                F1 -. iterate .-> P2[app-edit<br/>APP.EDIT]:::sidekick
+                P2 --> F2[/"resume_v{N+1}.md<br/>cover_letter_v{N+1}.md<br/>audit_v{N+1}.md"/]:::file
+                F2 -. more edits .-> P2
+
+                F2 --> P3[app-qa<br/>APP.QA]:::sidekick
+                P3 --> F3[/"qa_package.md"/]:::file
+
+                F3 --> P4[app-final<br/>APP.FINAL]:::sidekick
+                P4 --> F4[/"final_resume.md<br/>final_cover_letter.md<br/>confidence_score.md<br/>LOCKED"/]:::file
+
+                F4 --> P5[interview-prep]:::sidekick
+                P5 --> F5[/"interview_guide.md"/]:::file
+
+                F5 --> P6[mock-interview-voice]:::sidekick
+                P6 --> F6[/"mock_interview_v{N}.md"/]:::file
+
+                Setup -. anytime .-> P7[outreach-drafter]:::sidekick
+                P7 --> F7[/"outreach_to_firstname_lastname.md"/]:::file
+
+                T1[/"cover_letter_template.md<br/>resume_director_template.md<br/>resume_senior_pm_template.md"/]:::shared
+                T1 -. reads .-> P1
+                T1 -. reads .-> P2
+
+                P1 -. status .-> S[(career_state.md)]
+                P4 -. status .-> S
+                P5 -. status .-> S
+          </div>
+        </div>
+        <p class="mobile-note">Mobile: scroll horizontally to see the full diagram.</p>
+
+        <p class="section-intro">The design choice that surprised me most: every application gets its own folder, and that folder holds everything the agents need. Job applications take multiple days with natural pause points. If the agents only held context in their own memory, I'd lose everything when I closed Claude and came back later. My agent team made the call to save everything to files. The folder becomes the source of truth. Before any sidekick acts, it reads the latest files. I can close Claude, come back days later, and the system picks up exactly where it left off. This pattern scales to hundreds of applications without needing a database.</p>
+      </div>
+
+      <div class="section-content">
+        <p class="close-section">Building this system taught me more about autonomous agent design than anything else I've worked on. The coordination overhead is real, and the role-ownership protocol matters more than I expected. If you're designing systems like this, I'm especially curious how you handle cross-lane decisions and keep handoffs clean without adding layers of approval overhead.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">© <span id="y"></span> Luke Squire</div>
+      <div class="footer__right">
+        <a class="textlink" href="../../lets-build.html">Let's Build!</a>
+        <span class="dot">•</span>
+        <a class="textlink" href="../../lets-build.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default',
+      flowchart: {
+        curve: 'basis',
+        padding: 20,
+        nodeSpacing: 50,
+        rankSpacing: 60
+      }
+    });
+  </script>
+</body>
+</html>
