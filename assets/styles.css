@@ -488,6 +488,22 @@ iframe {
   color: var(--teal-dark);
 }
 
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+  margin-left: 4px;
+  transition: color 0.15s ease;
+}
+
+.footer__social + .footer__social {
+  margin-left: 12px;
+}
+
+.footer__social:hover {
+  color: var(--teal);
+}
+
 /* Forms */
 .resume-form,
 .contact-form {
