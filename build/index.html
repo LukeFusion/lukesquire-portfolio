@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build with Luke | AI Product Leadership &amp; Consulting</title>
+<meta name="description" content="I help product teams and organizations put AI to real work, with hands-on coaching and done-for-you setup for small businesses and families around San Diego.">
+<meta property="og:title" content="Build with Luke | AI Product Leadership &amp; Consulting">
+<meta property="og:description" content="A real human who'll get you set up with AI. Strategy and fractional product leadership for teams, plus hands-on coaching and setup for San Diego.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF8F4; --text:#1F2937; --muted:#6B7280;
+    --teal:#0D9488; --teal-dark:#0B7A70; --coral:#F97560;
+    --line:#E5E7EB; --card:#FFFFFF; --max:940px; --radius:10px;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:"DM Sans",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:var(--teal);text-decoration:none;} a:hover{color:var(--teal-dark);}
+
+  .site-header{position:sticky;top:0;z-index:20;background:rgba(250,248,244,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .site-header .inner{max-width:var(--max);margin:0 auto;padding:13px 28px;display:flex;align-items:center;gap:10px;}
+  .brand{font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--text);}
+  .brand .accent{color:var(--teal);}
+  .site-nav{margin-left:auto;display:flex;align-items:center;gap:2px;}
+  .site-nav a{color:var(--muted);font-weight:500;padding:8px 11px;border-radius:8px;font-size:14px;}
+  .site-nav a:hover{color:var(--text);}
+  .btn{display:inline-block;border-radius:var(--radius);padding:11px 18px;font-weight:600;font-size:14.5px;border:1px solid transparent;cursor:pointer;line-height:1;}
+  .btn--primary{background:var(--teal);color:#fff;} .btn--primary:hover{background:var(--teal-dark);color:#fff;}
+  .btn--ghost{border-color:var(--teal);color:var(--teal);background:transparent;} .btn--ghost:hover{background:rgba(13,148,136,.06);color:var(--teal-dark);}
+  .site-nav .btn{margin-left:8px;}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .hero{position:relative;text-align:center;padding:80px 28px 64px;overflow:hidden;}
+  .hero__flourish{position:absolute;inset:-30% -20% auto auto;width:520px;height:520px;background:radial-gradient(closest-side,rgba(13,148,136,.14),transparent 70%);transform:rotate(8deg);pointer-events:none;z-index:0;}
+  .hero__inner{position:relative;z-index:1;max-width:700px;margin:0 auto;}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:18px;}
+  .hero h1{font-size:clamp(34px,5vw,52px);line-height:1.08;letter-spacing:-.02em;font-weight:700;margin:0 0 18px;}
+  .hero p{font-size:19px;line-height:1.6;color:#42505F;margin:0 auto 16px;max-width:600px;}
+  .hero .scope{font-size:15px;color:var(--muted);margin:0 auto 28px;max-width:520px;}
+  .hero .scope b{color:var(--text);font-weight:600;}
+  .hero .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+  .audit{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .audit-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:12px;padding:24px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  .audit-card .at{flex:1;min-width:260px;}
+  .audit-card .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);font-weight:500;}
+  .audit-card h3{font-size:20px;font-weight:700;margin:4px 0 6px;}
+  .audit-card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5;}
+  .audit-card .price{text-align:right;}
+  .audit-card .price .amt{font-size:30px;font-weight:700;color:var(--teal);}
+  .audit-card .price .note{font-size:12.5px;color:var(--muted);}
+
+  section.block{padding:58px 0;border-top:1px solid var(--line);}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);font-weight:500;margin-bottom:10px;}
+  .block h2{font-size:30px;line-height:1.15;letter-spacing:-.015em;font-weight:700;margin:0 0 12px;}
+  .block .lead{font-size:17px;color:#42505F;max-width:640px;margin:0 0 36px;}
+
+  .orgblock{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:12px;padding:24px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:30px;}
+  .orgblock .at{flex:1;min-width:280px;}
+  .orgblock .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);font-weight:500;}
+  .orgblock h3{font-size:20px;font-weight:700;margin:5px 0 8px;}
+  .orgblock p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55;}
+  .orgblock .right{text-align:right;}
+  .orgblock .right .note{font-size:12px;color:var(--muted);margin-top:8px;}
+  .track-h{font-size:14px;font-weight:700;letter-spacing:.01em;margin:0 0 16px;color:var(--text);}
+  .track-h span{color:var(--muted);font-weight:500;}
+
+  .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .way{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;transition:border-color .15s ease,transform .15s ease;}
+  .way:hover{border-color:rgba(13,148,136,.45);transform:translateY(-2px);}
+  .way .ic{font-size:24px;margin-bottom:12px;}
+  .way h3{font-size:18px;font-weight:700;margin:0 0 4px;}
+  .way .for{font-size:12.5px;color:var(--teal);font-weight:600;margin-bottom:10px;}
+  .way p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.5;}
+  .way .from{font-size:14px;font-weight:600;color:var(--text);border-top:1px solid var(--line);padding-top:12px;}
+  .way .from span{color:var(--muted);font-weight:400;}
+  .way-link{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:600;color:var(--teal);}
+  .way-link:hover{color:var(--teal-dark);}
+
+  .leverage{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 40px;}
+  .lev-item{display:flex;gap:16px;}
+  .lev-num{font-size:32px;font-weight:700;color:var(--teal);line-height:1;min-width:28px;}
+  .lev-item h3{font-size:17px;font-weight:600;margin:0 0 4px;}
+  .lev-item p{margin:0;color:var(--muted);font-size:14px;line-height:1.5;}
+  .lev-eq{font-family:var(--mono);font-size:14px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--teal);border-radius:8px;padding:13px 18px;margin:0 0 32px;display:inline-block;}
+  .lev-eq .op{color:var(--muted);}
+
+  .pkgs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .pkg{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;}
+  .pkg .seg{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+  .pkg h3{font-size:19px;font-weight:700;margin:6px 0 8px;}
+  .pkg p{margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.55;}
+  .pkg ul{list-style:none;padding:0;margin:0 0 18px;}
+  .pkg li{font-size:13.5px;color:var(--text);padding:5px 0 5px 22px;position:relative;}
+  .pkg li::before{content:"→";position:absolute;left:0;color:var(--teal);}
+  .pkg .row{display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;}
+  .pkg .amt{font-size:24px;font-weight:700;color:var(--teal);}
+  .pkg .fin{font-size:11.5px;color:var(--muted);max-width:160px;text-align:right;line-height:1.4;}
+
+  .retainer{margin-top:18px;background:linear-gradient(135deg,#0D9488 0%,#0B7A70 100%);color:#fff;border-radius:12px;padding:26px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  .retainer .rt{flex:1;min-width:260px;}
+  .retainer h3{margin:0 0 6px;font-size:19px;font-weight:700;}
+  .retainer p{margin:0;color:rgba(255,255,255,.88);font-size:14px;line-height:1.5;}
+  .retainer .amt{font-size:26px;font-weight:700;white-space:nowrap;}
+  .retainer .amt span{font-size:14px;font-weight:400;color:rgba(255,255,255,.8);}
+
+  .trust{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:38px;}
+  .trust .quote{font-size:19px;line-height:1.5;font-weight:500;margin:0 0 14px;max-width:680px;}
+  .trust .attr{color:var(--muted);font-size:14px;}
+
+  .contact{padding:64px 28px;border-top:1px solid var(--line);}
+  .contact-inner{max-width:880px;margin:0 auto;}
+  .contact .kicker,.contact h2{text-align:center;}
+  .contact h2{font-size:32px;font-weight:700;letter-spacing:-.02em;margin:0 0 12px;}
+  .contact .lead2{text-align:center;color:#42505F;font-size:17px;max-width:540px;margin:0 auto 36px;}
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;align-items:start;}
+  .contact-primary{background:linear-gradient(135deg,#0D9488 0%,#0B7A70 100%);color:#fff;border-radius:12px;padding:28px 26px;}
+  .contact-primary h3{margin:0 0 6px;font-size:19px;font-weight:700;}
+  .contact-primary p{margin:0 0 18px;color:rgba(255,255,255,.9);font-size:14px;line-height:1.5;}
+  .contact-primary .btn--primary{background:#fff;color:var(--teal-dark);}
+  .contact-primary .btn--primary:hover{background:#F0FAF9;color:var(--teal-dark);}
+  .contact-primary .pnote{font-size:12px;color:rgba(255,255,255,.78);margin:12px 0 0;}
+  .contact-form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px;}
+  .contact-form label{display:block;font-size:13px;font-weight:600;margin-bottom:14px;color:var(--text);}
+  .contact-form input,.contact-form textarea{width:100%;margin-top:6px;font-family:var(--sans);font-size:14.5px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;}
+  .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--teal);}
+  .contact-form textarea{min-height:84px;resize:vertical;}
+  .contact-form .btn--primary{width:100%;text-align:center;margin-top:4px;}
+  .formnote{font-size:12.5px;color:var(--muted);margin:14px 0 0;line-height:1.5;}
+  .formnote b{color:var(--text);}
+
+  .site-footer{border-top:1px solid var(--line);padding:24px 28px;text-align:center;color:var(--muted);font-size:13.5px;}
+  .site-footer a{font-weight:500;}
+
+  @media (max-width:760px){
+    .leverage,.ways,.pkgs,.contact-grid{grid-template-columns:1fr;}
+    .audit-card .price{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="inner">
+      <span class="brand">Build with <span class="accent">Luke</span></span>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#how">How I work</a>
+        <a href="#ways">Ways to work</a>
+        <a href="#packages">Packages</a>
+        <a href="https://calendar.app.google/VoNiLBjjUoZ7VbDj9" class="btn btn--primary" target="_blank" rel="noopener">Start with an audit</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero__flourish"></div>
+    <div class="hero__inner">
+      <div class="eyebrow">AI coaching &amp; consulting · San Diego and remote</div>
+      <h1>A real human who'll get you set up with AI.</h1>
+      <p>I work with product teams and organizations to put AI to real work. For small businesses and families around San Diego, I'll set it up for you or teach you to build it yourself, on the tools you already use.</p>
+      <p class="scope"><b>What you'll get:</b> A working prototype and the systems to keep going on your own. Starting is the hardest part, and that's where I come in.</p>
+      <div class="cta-row">
+        <a href="https://calendar.app.google/VoNiLBjjUoZ7VbDj9" class="btn btn--primary" target="_blank" rel="noopener">Start with an audit</a>
+        <a href="#ways" class="btn btn--ghost">See the ways to work</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="audit">
+    <div class="audit-card">
+      <div class="at">
+        <div class="k">Start here</div>
+        <h3>The AI Setup Audit</h3>
+        <p>Not sure where AI could help? I'll spend an hour on how you live or work, then hand you a short plan: the two or three setups that'd save you the most time, and what each takes. Decide to go further and this comes off the package.</p>
+      </div>
+      <div class="price">
+        <div class="amt">$100</div>
+        <div class="note">credited toward any package<br>booked within 30 days</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <section class="block" id="ways" style="border-top:none;padding-top:54px;">
+      <div class="kicker">Ways to work with me</div>
+      <h2>Strategy for your org, or hands-on help close to home.</h2>
+      <p class="lead">Same skill, different depth. Tell me which one sounds like you and we'll start there.</p>
+
+      <div class="orgblock">
+        <div class="at">
+          <div class="k">For teams &amp; organizations · remote</div>
+          <h3>AI strategy &amp; fractional product leadership</h3>
+          <p>I help product teams figure out where AI actually fits, then build it with them. That's strategy through a working prototype, with someone who spent ten years leading product in climate and regulated markets.</p>
+        </div>
+        <div class="right">
+          <a href="https://calendar.app.google/VoNiLBjjUoZ7VbDj9" class="btn btn--ghost" target="_blank" rel="noopener">Start with a conversation</a>
+          <div class="note">Priced to the engagement, not a package</div>
+        </div>
+      </div>
+
+      <h3 class="track-h">Coaching, classes &amp; done-for-you setup <span>· local, San Diego</span></h3>
+      <div class="ways">
+        <div class="way">
+          <div class="ic">🛠️</div>
+          <h3>Done for you</h3>
+          <div class="for">Small businesses &amp; families</div>
+          <p>I set up the calendar, automations, and an AI assistant that already knows your world. You leave with it running.</p>
+          <div class="from">From <strong>$350</strong> <span>· fixed-price packages</span></div>
+        </div>
+        <div class="way">
+          <div class="ic">🤝</div>
+          <h3>1:1 coaching</h3>
+          <div class="for">Individuals who want to build</div>
+          <p>We build your first AI agent together, live, on your real tools. Then a second one, with you driving. You keep everything.</p>
+          <div class="from">$75<span>/hr · or a 4-week arc</span></div>
+        </div>
+        <div class="way">
+          <div class="ic">👥</div>
+          <h3>Group class</h3>
+          <div class="for">Teams, classrooms &amp; community groups</div>
+          <p>Zero to Prototype is a hands-on session where everyone walks out having built one useful thing with AI. Works for a team, a classroom, or any room of people who want to actually do something.</p>
+          <div class="from">From $20<span>/person · groups of 5 to 20</span></div>
+          <a class="way-link" href="#contact">Contact me to set one up →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="how">
+      <div class="kicker">How I think about it</div>
+      <h2>The unlock isn't use cases. It's leverage.</h2>
+      <p class="lead">Most people get stuck brainstorming what to ask AI. The real shift is what AI can <strong>connect to</strong> and <strong>act on</strong>. Four pieces turn a chatbot into something that does work for you.</p>
+      <div class="lev-eq">Leverage <span class="op">=</span> Context <span class="op">+</span> Integrations <span class="op">+</span> Tools <span class="op">+</span> Memory</div>
+      <div class="leverage">
+        <div class="lev-item"><div class="lev-num">1</div><div><h3>Context</h3><p>It knows your goals, your voice, and how you actually work.</p></div></div>
+        <div class="lev-item"><div class="lev-num">2</div><div><h3>Integrations</h3><p>It reaches your real tools: email, calendar, files, the systems you live in.</p></div></div>
+        <div class="lev-item"><div class="lev-num">3</div><div><h3>Tools</h3><p>It can take action (draft, schedule, summarize, fetch), not just talk about it.</p></div></div>
+        <div class="lev-item"><div class="lev-num">4</div><div><h3>Memory</h3><p>It remembers what matters across days, so it gets sharper the longer you use it.</p></div></div>
+      </div>
+    </section>
+
+    <section class="block" id="packages">
+      <div class="kicker">Done-for-you packages</div>
+      <h2>Pick a setup. Each has a clear finish line.</h2>
+      <p class="lead">Fixed price, fixed scope. You know exactly what you're getting before we start. Anything beyond the package lives on the care plan. Deposit to start.</p>
+      <div class="pkgs">
+        <div class="pkg">
+          <div class="seg">Household</div>
+          <h3>The Family Hub Setup</h3>
+          <p>Your family's calendar, contacts, and reminders working together across everyone's phones, plus an AI assistant that already knows how to help with the questions and tasks you hit every week.</p>
+          <ul>
+            <li>Shared calendar synced across phones, auto-reminders set</li>
+            <li>Organized contacts + a “who to call” emergency sheet</li>
+            <li>Household AI setup with 5 saved prompts tailored to you</li>
+            <li>A 30-min handoff so you can actually drive it</li>
+          </ul>
+          <div class="row"><span class="amt">$350–450</span><span class="fin">Finish line: it syncs, prompts saved, handoff done.</span></div>
+        </div>
+        <div class="pkg">
+          <div class="seg">Small business</div>
+          <h3>Small Business AI Quick-Start</h3>
+          <p>I find the most repetitive part of how you run things and automate it, then set up an AI assistant that knows your business and drafts the replies, posts, and answers you'd write by hand.</p>
+          <ul>
+            <li>Workflow audit to find your highest-time-cost task</li>
+            <li>One core automation built and working</li>
+            <li>AI assistant trained on your services / menu / policies</li>
+            <li>A one-page SOP + 45-min team handoff</li>
+          </ul>
+          <div class="row"><span class="amt">$750–1,200</span><span class="fin">50% deposit. Website build quoted separately, bundled only.</span></div>
+        </div>
+      </div>
+
+      <div class="retainer">
+        <div class="rt">
+          <h3>The AI Care Plan <span style="font-weight:400;font-size:14px;opacity:.85;">· optional, attaches to any package</span></h3>
+          <p>Once it's set up, I keep it running: small tweaks, fixes when something breaks, and one new improvement each month.</p>
+        </div>
+        <div class="amt">$75–150<span>/mo</span></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="kicker">Why work with me</div>
+      <h2>Local, plain-spoken, and actually hands-on.</h2>
+      <p class="lead">No jargon, no support tickets. Just someone in town who gets AI and will sit with you until it actually works.</p>
+      <div class="ways">
+        <div class="way">
+          <div class="ic">📍</div>
+          <h3>Right here in town</h3>
+          <p>I'm in La Mesa. We can meet in person or hop on a call, and you're never emailing a faceless company.</p>
+        </div>
+        <div class="way">
+          <div class="ic">💬</div>
+          <h3>Plain English</h3>
+          <p>I explain what we're doing as we go, so it never feels like magic you can't touch. You'll actually understand your own setup.</p>
+        </div>
+        <div class="way">
+          <div class="ic">✓</div>
+          <h3>No surprise bills</h3>
+          <p>Every package has a fixed price and a clear finish line. Scope is in writing before we start.</p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           TESTIMONIAL: hidden at launch. DROP-IN WHEN READY:
+           uncomment this block and replace the quote + attribution.
+      <div class="trust" style="margin-top:30px;">
+        <p class="quote">“REAL QUOTE GOES HERE.”</p>
+        <p class="attr">First name, role / town</p>
+      </div>
+           ============================================================ -->
+    </section>
+
+  </div>
+
+  <div class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="kicker">Get in touch</div>
+      <h2>Ready to see what AI could do for you?</h2>
+      <p class="lead2">Book the $100 audit, or send a note and I'll get back to you. No spam, and your email is never posted anywhere on this site.</p>
+      <div class="contact-grid">
+        <div class="contact-primary">
+          <h3>Ready to start?</h3>
+          <p>Grab a time that works and we'll walk through where AI could help you most.</p>
+          <a href="https://calendar.app.google/VoNiLBjjUoZ7VbDj9" class="btn btn--primary" target="_blank" rel="noopener">Book the audit →</a>
+          <p class="pnote">Opens my booking calendar in a new tab.</p>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/mlgwqjen" method="POST">
+          <input type="hidden" name="_subject" value="New inquiry from Build with Luke">
+          <label>Your name
+            <input type="text" name="name" placeholder="Jane Smith" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label>What would you like help with?
+            <textarea name="message" placeholder="A few words about your team, business, or family and what feels like a time-suck right now." required></textarea>
+          </label>
+          <button type="submit" class="btn btn--primary">Send</button>
+          <p class="formnote"><b>Goes straight to my inbox.</b> Your address stays private; it's never displayed on the site.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    Build with Luke &nbsp;·&nbsp; AI Coaching &amp; Consulting · La Mesa, CA &nbsp;·&nbsp; <a href="https://lukesquire.us">lukesquire.us</a>
+  </footer>
+
+</body>
+</html>
