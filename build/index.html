@@ -14,7 +14,7 @@
 <style>
   :root{
     --bg:#FAF8F4; --text:#1F2937; --muted:#6B7280;
-    --teal:#0D9488; --teal-dark:#0B7A70; --coral:#F97560;
+    --teal:#0D9488; --teal-dark:#0B7A70; --teal-deep:#095F57; --coral:#F97560;
     --line:#E5E7EB; --card:#FFFFFF; --max:940px; --radius:10px;
     --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
     --sans:"DM Sans",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
@@ -32,9 +32,10 @@
   .site-nav a{color:var(--muted);font-weight:500;padding:8px 11px;border-radius:8px;font-size:14px;}
   .site-nav a:hover{color:var(--text);}
   .btn{display:inline-block;border-radius:var(--radius);padding:11px 18px;font-weight:600;font-size:14.5px;border:1px solid transparent;cursor:pointer;line-height:1;}
-  .btn--primary{background:var(--teal);color:#fff;} .btn--primary:hover{background:var(--teal-dark);color:#fff;}
+  .btn--primary{background:var(--teal-dark);color:#fff;} .btn--primary:hover{background:var(--teal-deep);color:#fff;}
   .btn--ghost{border-color:var(--teal);color:var(--teal);background:transparent;} .btn--ghost:hover{background:rgba(13,148,136,.06);color:var(--teal-dark);}
   .site-nav .btn{margin-left:8px;}
+  .site-nav a.btn--primary,.site-nav a.btn--primary:hover{color:#fff;}
 
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
   .hero{position:relative;text-align:center;padding:80px 28px 64px;overflow:hidden;}
@@ -142,6 +143,23 @@
   @media (max-width:760px){
     .leverage,.ways,.pkgs,.contact-grid{grid-template-columns:1fr;}
     .audit-card .price{text-align:left;}
+    /* header: drop the section links, keep brand + CTA so the row never overflows */
+    .site-header .inner{padding:11px 18px;gap:8px;}
+    .site-nav a:not(.btn){display:none;}
+    .site-nav .btn{margin-left:0;}
+    .btn{padding:10px 15px;font-size:14px;}
+    /* tighten side gutters and vertical rhythm for small screens */
+    .wrap,.audit{padding-left:18px;padding-right:18px;}
+    .hero{padding:54px 18px 44px;}
+    .hero p{font-size:17px;}
+    .hero .cta-row .btn{flex:1;text-align:center;}
+    section.block{padding:44px 0;}
+    .block h2{font-size:25px;}
+    .block .lead,.contact .lead2{font-size:16px;}
+    .audit-card,.orgblock,.retainer,.contact-primary,.contact-form,.trust,.pkg,.way{padding:22px 20px;}
+    .orgblock .right,.retainer .amt{text-align:left;}
+    .leverage{gap:22px 0;}
+    .contact{padding:48px 18px;}
   }
 </style>
 </head>
