@@ -111,3 +111,9 @@ footer .li svg{width:20px;height:20px;fill:currentColor}
 .toc li{padding:3px 0}
 .toc a{text-decoration:none}
 @media (max-width:760px){.about{grid-template-columns:1fr}}
+.journey{display:grid;gap:10px;margin-top:12px}
+.jstep{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.jstep .n{width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center}
+.jstep.hl{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
+.jstep .who{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-left:6px}
+.hl-note{font-size:13px;color:var(--accent);font-weight:600}
