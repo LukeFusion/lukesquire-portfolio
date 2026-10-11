@@ -117,3 +117,4 @@ footer .li svg{width:20px;height:20px;fill:currentColor}
 .jstep.hl{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
 .jstep .who{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-left:6px}
 .hl-note{font-size:13px;color:var(--accent);font-weight:600}
+.stairs{width:100%;min-width:560px;height:auto;display:block;margin-top:8px}
