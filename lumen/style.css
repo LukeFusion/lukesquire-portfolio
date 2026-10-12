@@ -89,7 +89,7 @@ th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute
 footer{max-width:1040px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
 @media (max-width:760px){
   h1{font-size:30px}
-  .layout{grid-template-columns:1fr}
+  .layout{grid-template-columns:minmax(0,1fr)}
   .subnav{position:static;display:flex;flex-wrap:wrap;gap:4px}
   .subnav a{border-left:0;border:1px solid var(--line);border-radius:999px;padding:4px 10px}
   .trade dl{grid-template-columns:1fr}
@@ -118,3 +118,5 @@ footer .li svg{width:20px;height:20px;fill:currentColor}
 .jstep .who{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-left:6px}
 .hl-note{font-size:13px;color:var(--accent);font-weight:600}
 .stairs{width:100%;min-width:560px;height:auto;display:block;margin-top:8px}
+.layout>*{min-width:0}
+.card.aid{display:flex;gap:14px;align-items:flex-start}.jobaid{flex:0 0 64px;width:64px;height:auto}

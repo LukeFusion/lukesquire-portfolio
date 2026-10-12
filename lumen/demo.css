@@ -76,3 +76,5 @@
 .tally{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
 .tally span{background:var(--warm-soft);color:var(--warm);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:600}
 @media (max-width:760px){.sf-body{grid-template-columns:1fr}.ds{grid-template-columns:1fr}.ds-side{border-right:0;border-bottom:1px solid #e5e5e5}.sf-app span{display:none}.st-row{grid-template-columns:1fr 90px}.st-row .own{display:none}.sf-field{grid-template-columns:1fr}}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.pair>div{min-width:0}.pair .page{max-width:none;margin:0 0 10px}
+.mk{display:inline-block;width:1.2em;font-weight:800}.mk-ok{color:#22a35a}.mk-no{color:#e5484d}
